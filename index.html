@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Metadatos -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Games, store, sale, steam, epic games, origin, ubisoft, pc">
+    <meta name="description" content="">
+    <meta name="author" content="Hector Ezequiel Zabala">
+    <meta name="robots" content="index, follow">
+    <!-- Iconos -->
+    <link rel="shortcut icon" href="./assets/img/Logo.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <!-- Titulo -->
+    <title>Rooi Slang</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="header">
+        <i class="bi bi-list" id="toggle-menu"></i>
+        <nav class="navbar">
+            <ul class="navbar-list" id="navbar-list">
+                <li class="navbar-list__item"><a href="#">Inicio</a></li>
+                <li class="navbar-list__item"><a href="#">Lista de deseados</a></li>
+                <li class="navbar-list__item"><a href="#">Sobre Nosotros</a></li>
+                <li class="navbar-list__item"><a href="#">Soporte</a></li>
+            </ul>
+            <div class="navbar-list__user">
+                <i class="bi bi-person-circle user-img"></i>
+                <div class="navbar-list__sesion">
+                    <a href="#" class="navbar-list__login">Iniciar Sesión</a>
+                    <a href="#" class="navbar-list__register">Registrarme</a>
+                </div>
+            </div>
+        </nav>
+        <a href="#"><img src="./assets/img/Logo.png" class="logo" width="100" alt="Logo"></a>
+        <i class="bi bi-cart" id="toggle-cart"></i>
+        <div class="cart-menu">
+            <div class="cart-menu-container">
+                <div class="cart-menu__products">
+                    <div class="cart-menu__products__item">
+                        <div class="product__item__info">
+                            <img src="./assets/img/carousel-hero/carousel-img-1.jpg" alt="" class="product__item__img">
+                            <p class="product__item__title">Dead Space</p>
+                        </div>
+                        <div class="product__item__btns">
+                            <div class="product__handler">
+                                <button class="btn--up">-</button>
+                                <span>0</span>
+                                <button class="btn--down">+</button>
+                            </div>
+                            <div class="product__options">
+                                <label for="">Seleccione su plataforma</label>
+                                <select name="" id="">
+                                    <option value="">Steam</option>
+                                    <option value="">Epic</option>
+                                    <option value="">Ubisoft</option>
+                                    <option value="">Origin</option>
+                                    <option value="">GOG</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <div class="cart-menu__btns">
+                    <p>Total: <span>0</span></p>
+                    <button class="btn">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main -->
+    <main>
+        <!-- Hero -->
+        <section class="hero" id="hero">
+            <div class="hero__titles">
+                <h1>¡Rooi Slang te da la bienvenida</h1>
+                <p>
+                    Te ofrecemos claves de juegos para pc en la plataforma que desees. Desde Steam, Epic games, Uplay y más...
+                </p>
+                <p>
+                    Descubrí y mira cuál va a ser tu siguiente aventura <i class="bi bi-controller"></i>
+                </p>
+            </div>
+            <div class="hero__carousel">
+                <h3>Recomendaciones</h3>
+                <div class="hero__carousel__controls">
+                    <i class="bi bi-arrow-left" id="hero__carousel--arrow-left"></i>
+                    <img src="./assets/img/carousel-hero/carousel-img-1.jpg" class="hero__carousel__img" width="200" alt="">
+                    <i class="bi bi-arrow-right" id="hero__carousel--arrow-right"></i>
+                </div>
+            </div>
+        </section>
+        <!-- Sale -->
+        <section class="sale" id="sale">
+            <h3>Rooi Slang Sale!</h3>
+            <div class="sale-container">
+                <div class="sale__cards">
+                    <img src="./assets/img/carousel-hero/carousel-img-1.jpg" class="sale__card__img" width="100" alt="">
+                    <div class="sale-card__content">
+                        <div class="sale-card__prices">
+                            <p>123.21</p>
+                            <p>41,23</p>
+                        </div>
+                        <div class="sale-card__btns">
+                            <i class="bi bi-heart-fill heart"></i>
+                            <button class="btn btn--buy">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Discover -->
+        <section class="discover" id="discover">
+            <h3>¡Explora!</h3>
+            <div class="discover__btns">
+                <button class="btn btn--discover btn--active">Nuevos</button>
+                <button class="btn btn--discover">Próximamente</button>
+                <button class="btn btn--discover">Ofertas</button>
+                <button class="btn btn--discover">Populares</button>
+            </div>
+            <div class="discover-cards-container">
+                <div class="discover__card">
+                    <img src="./assets/img/carousel-hero/carousel-img-1.jpg" class="discover__card__img" width="100" alt="">
+                    <div class="discover__card__bottom">
+                        <i class="bi bi-heart-fill"></i>
+                        <p>6,999.00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer>
+        <!-- Contact -->
+        <section class="contact">
+            <h3>Buscanos en nuestras redes</h3>
+            <ul class="contact__list">
+                <li class="contact__list__item"><a href="#">Facebook <i class="bi bi-facebook"></i></a></li>
+                <li class="contact__list__item"><a href="#">Twitter <i class="bi bi-twitter"></i></a></li>
+                <li class="contact__list__item"><a href="#">Instagram <i class="bi bi-instagram"></i></a></li>
+                <li class="contact__list__item"><a href="#">Email <i class="bi bi-envelope-at-fill"></i></a></li>
+            </ul>
+        </section>
+        <!-- Footer bottom -->
+        <section class="footer-bottom">
+            <ul class="footer-bottom__list">
+                <li class="footer-bottom__list__item"><a href="#">Inicio</a></li>
+                <li class="footer-bottom__list__item"><a href="#">Sobre Nosotros</a></li>
+                <li class="footer-bottom__list__item"><a href="#">Soporte</a></li>
+            </ul>
+            <p class="footer-bottom__copyright"><img src="./assets/img/footer-gif.webp" class="footer-gif" width="100" alt="footer-gif"> &copy;2023 Hector Ezequiel Zabala - Rooi Slang</p>
+        </section>
+    </footer>
+    <!-- Js -->
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
