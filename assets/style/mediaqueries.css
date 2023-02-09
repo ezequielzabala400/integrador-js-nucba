@@ -1,0 +1,177 @@
+
+@media (min-width: 576px) {
+
+    /* Hero */
+
+    .hero__titles h1{
+        font-size: 2.4rem;
+    }
+
+    .hero__titles p{
+        font-size: 1.5rem;
+    }
+
+    .hero__carousel{
+        width: 400px;
+    }
+
+    .hero__carousel h3{
+        font-size: 2rem;
+    }
+
+    #hero__carousel--arrow-left, #hero__carousel--arrow-right{
+        top: 70px;
+    }
+
+    /* Sale */
+
+    .sale-container{
+        grid-template-columns: repeat(2, 1fr
+        );
+    }
+
+    /* Discover */
+
+    .discover-cards-container{
+        flex-direction: row;
+    }
+
+    /* Footer */
+
+    footer{
+        padding: 40px;
+    }
+}
+
+@media (min-width: 768px) {
+
+    /* Cart */
+
+    .cart-menu__products__item{
+        flex-direction: row;
+    }
+
+    .product__item__img{
+        width: 140px;
+    }
+
+    .product__item__title{
+        font-size: 1.4rem;
+    }
+
+    .product__options{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.4rem;
+    }
+
+    .product__options select{
+        font-size: 1.6rem;
+    }
+
+    .cart-menu__btns p{
+        font-size: 2rem;
+    }
+    /* Hero */
+
+    .hero__titles h1{
+        font-size: 3rem;
+    }
+
+    .hero__titles p{
+        font-size: 1.7rem;
+    }
+
+    .hero__carousel{
+        width: 400px;
+    }
+
+    .hero__carousel h3{
+        font-size: 2.3rem;
+    }
+
+    /* Sale */
+
+    .sale h3{
+        font-size: 2.3rem;
+    }
+
+    .sale-container{
+        margin-top: 20px;
+    }
+
+    /* Discover */
+
+    .discover h3{
+        font-size: 2.3rem;
+    }
+
+    .discover-cards-container{
+        width: 700px;
+    }
+
+    /* Contact */
+
+    .contact h3{
+        font-size: 2.3rem;
+    }
+
+    .contact__list__item a{
+        width: 140px;
+        font-size: 1.7rem;
+    }
+
+    /* Footer */
+
+    .footer-bottom__list__item a{
+        font-size: 1.7rem;
+    }
+}
+
+@media (min-width: 992px) {
+
+    /* Cart */
+
+    .cart-menu{
+        width: 360px;
+    }
+
+    /* Hero */
+    .hero{
+        margin: 60px auto;
+        max-width: 1200px;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero__titles{
+        margin-top: unset;
+        justify-content: space-evenly;
+        width: 50%;
+        height: 300px;
+    }
+
+    .hero__carousel{
+        margin-top: unset;
+        justify-content: space-evenly;
+        height: 300px;
+        width: 500px;
+    }
+
+    #hero__carousel--arrow-left, #hero__carousel--arrow-right{
+        top: 90px;
+    }
+
+    /* Sale */
+    .sale-container{
+        width: 900px;
+    }
+
+    .contact{
+        margin: auto;
+        max-width: 1200px;
+    }
+}

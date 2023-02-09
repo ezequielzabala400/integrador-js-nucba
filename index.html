@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <!-- CSS -->
     <link rel="stylesheet" href="./assets/style/style.css">
+    <link rel="stylesheet" href="./assets/style/mediaqueries.css">
     <!-- Titulo -->
     <title>Rooi Slang</title>
 </head>
@@ -69,6 +70,7 @@
                 <div class="cart-menu__btns">
                     <p>Total: <span>0</span></p>
                     <button class="btn">Comprar</button>
+                    <button class="btn">Vaciar Carrito</button>
                 </div>
             </div>
         </div>
@@ -80,17 +82,17 @@
             <div class="hero__titles">
                 <h1>¡Rooi Slang te da la bienvenida</h1>
                 <p>
-                    Te ofrecemos claves de juegos para pc en la plataforma que desees. Desde Steam, Epic games, Uplay y más...
+                    Te ofrecemos claves de juegos para pc en la plataforma que desees. Desde <span>Steam</span>, <span>Epic games</span>, <span>Uplay</span> y más...
                 </p>
                 <p>
-                    Descubrí y mira cuál va a ser tu siguiente aventura <i class="bi bi-controller"></i>
+                    Descubrí y mira cuál va a ser tu siguiente <span>aventura <i class="bi bi-controller"></i></span>
                 </p>
             </div>
             <div class="hero__carousel">
                 <h3>Recomendaciones</h3>
                 <div class="hero__carousel__controls">
                     <i class="bi bi-arrow-left" id="hero__carousel--arrow-left"></i>
-                    <img src="./assets/img/carousel-hero/carousel-img-1.jpg" class="hero__carousel__img" width="200" alt="">
+                    <img src="./assets/img/carousel-hero/carousel-img-1.jpg" class="hero__carousel__img" alt="">
                     <i class="bi bi-arrow-right" id="hero__carousel--arrow-right"></i>
                 </div>
             </div>
@@ -99,38 +101,22 @@
         <section class="sale" id="sale">
             <h3>Rooi Slang Sale!</h3>
             <div class="sale-container">
-                <div class="sale__cards">
-                    <img src="./assets/img/carousel-hero/carousel-img-1.jpg" class="sale__card__img" width="100" alt="">
-                    <div class="sale-card__content">
-                        <div class="sale-card__prices">
-                            <p>123.21</p>
-                            <p>41,23</p>
-                        </div>
-                        <div class="sale-card__btns">
-                            <i class="bi bi-heart-fill heart"></i>
-                            <button class="btn btn--buy">Comprar</button>
-                        </div>
-                    </div>
-                </div>
+                
+                
             </div>
         </section>
         <!-- Discover -->
         <section class="discover" id="discover">
             <h3>¡Explora!</h3>
             <div class="discover__btns">
-                <button class="btn btn--discover btn--active">Nuevos</button>
-                <button class="btn btn--discover">Próximamente</button>
-                <button class="btn btn--discover">Ofertas</button>
-                <button class="btn btn--discover">Populares</button>
+                <button class="btn btn--discover btn--active" data-category="new">Nuevos</button>
+                <button class="btn btn--discover" data-category="classic">Clasicos</button>
+                <button class="btn btn--discover" data-category="sale">Ofertas</button>
+                <button class="btn btn--discover" data-category="popular">Populares</button>
             </div>
             <div class="discover-cards-container">
-                <div class="discover__card">
-                    <img src="./assets/img/carousel-hero/carousel-img-1.jpg" class="discover__card__img" width="100" alt="">
-                    <div class="discover__card__bottom">
-                        <i class="bi bi-heart-fill"></i>
-                        <p>6,999.00</p>
-                    </div>
-                </div>
+                
+            
             </div>
         </section>
     </main>
@@ -157,6 +143,7 @@
         </section>
     </footer>
     <!-- Js -->
+    <script src="./assets/js/games.js"></script>
     <script src="./assets/js/main.js"></script>
 </body>
 </html>
