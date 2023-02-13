@@ -1,0 +1,101 @@
+:root{
+    /* Colores */
+    --Background: #0f0e17;
+    --Navbar: #001845;
+    --Headline: #fffffe;
+    --Paragraph: #a7a9be;
+    --Highlight: #ff8906;
+    --Secondary: #f25f4c;
+    --Green: #2cb67d;
+    --Purple: #7f5af0;
+    --Pink: #e53170;
+    --Buttons: #ff8906;
+    --Footer: #242629;
+
+    /* Font Family */
+    --Font-Roboto: 'Roboto', sans-serif;
+    --Font-Montserrat: 'Montserrat', sans-serif;
+    --Font-Source-Sans-Pro: 'Source Sans Pro', sans-serif;
+    --Font-Ubuntu: 'Ubuntu', sans-serif;
+}
+
+#register{
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#form{
+    background-color: var(--Navbar);
+    width: 400px;
+    height: 700px;
+    padding: 16px;
+    border: 1px solid var(--Highlight);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation: fade 0.5s;
+}
+
+@media (max-width: 576px) {
+    #form{
+        width: 300px;
+    }
+}
+
+.form__titles{
+    padding: 8px;
+    font-size: 1.6rem;
+    font-family: var(--Font-Roboto);
+}
+
+.form__titles p{
+    font-size: 1.2rem;
+}
+
+.form__titles a{
+    color: var(--Highlight);
+}
+
+.form-field{
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-field label{
+    margin: auto;
+    text-align: start;
+    font-size: 1.6rem;
+    width: 80%;
+}
+
+small{
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    color: var(--Pink);
+    font-size: 1.3rem;
+}
+
+.input{
+    margin: auto;
+    padding: 6px;
+    border-radius: 8px;
+    width: 80%;
+    border: none;
+    font-family: var(--Font-Roboto);
+    background-color: var(--Background);
+    color: var(--Highlight);
+}
+
+.error{
+    border: 1px solid var(--Pink);
+}
+
+.success{
+    border: 1px solid var(--Green);
+}

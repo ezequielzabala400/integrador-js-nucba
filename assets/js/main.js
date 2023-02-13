@@ -12,7 +12,6 @@ const saleContainerCards = document.querySelector('.sale-container');
 const discoverBtns = document.querySelectorAll('.btn--discover');
 const discoverCardsContainer = document.querySelector('.discover-cards-container');
 
-
 // Hero Carousel
 
 let heroCarouselImg = [
@@ -27,92 +26,79 @@ const carouselSlider = () => {
     let i = 1;
     carouselArrowRight.addEventListener('click', (() => {
         heroCarousel.setAttribute('src',heroCarouselImg[i])
-        console.log('right', i)
         i++
         if(i > 4){
             i = 0;
         }
-        console.log('right', i)
     }))
     carouselArrowLeft.addEventListener('click', (() => {
         heroCarousel.setAttribute('src',heroCarouselImg[i])
-        console.log('left', i)
         i--
         if(i < 0){
             i = 4;
         }
-        console.log('left', i)
     }))
 }
 
 // Sale Cards
 
-const htmlSaleCard = ({name, price, img, oldPrice}) => {
-    return`
-    <div class="sale__cards">
-                    <img src="${img}" class="sale__card__img" alt="${name}">
-                    <div class="sale-card__content">
-                        <div class="sale-card__prices">
-                            <p>${oldPrice}</p>
-                            <p>${price}</p>
-                        </div>
-                        <div class="sale-card__btns">
-                            <i class="bi bi-heart-fill heart"></i>
-                            <button class="btn btn--buy">Comprar</button>
-                        </div>
-                    </div>
-                </div>
-    `
-}
-
-const renderSaleCards = (games) => {
+const renderSaleCards = games => {
     const saleGames = games.filter(game => game.category === 'sale');
     saleContainerCards.innerHTML = saleGames.map(game => htmlSaleCard(game)).join('')
 }
 
-// Discover cards
 
-const discoverCaterogryIcon = category => {
-    return category === 'new'
-    ? '<i class="bi bi-fire"></i> NEW'
-    : category === 'classic'
-    ? '<i class="bi bi-controller"></i> CLASSIC'
-    : category === 'sale'
-    ? '<i class="bi bi-alarm"></i> SALE'
-    : '<i class="bi bi-award"></i> POPULAR'
+
+
+
+
+
+const findWishGame = (element) => gameList.find(game => game.name === element.dataset.id)
+
+
+const heartBtn = () => {
+    const heartBtns = document.querySelectorAll('.heart');
+
+    heartBtns.forEach(heart => {
+        
+    heart.addEventListener('click', (e) => {
+        if(!e.target.classList.contains('heart--active')){
+            e.target.classList.add('heart--active')
+            console.log(e.target)
+            const findedGame = findWishGame(e.target)
+            if(wishGamesList.some(game => game.name == findedGame.name)){
+                alert('El juego ya esta en la lista de deseados')
+                return;
+            }else{
+                wishGamesList.push(findedGame)
+                saveWishGamesToLocalStorage(wishGamesList)
+            }
+        }
+    })
+})
 }
 
-const htmlDiscoverCard = ({name, price, img, category}) => {
-    return `
-    <div class="discover__card">
-                    <img src="${img}" class="discover__card__img" alt="${name}">
-                    <div class="discover__card__middle">
-                        <i class="bi bi-heart-fill heart"></i>
-                        <p>${price}</p>
-                    </div>
-                    <div class="discover__card__bottom">
-                        <p class="discover__card--${category}">${discoverCaterogryIcon(category)}</p>
-                        <button class="btn">Comprar</button>
-                    </div>
-                </div>
-    `
-}
+// Discover games
 
-let btns = [...discoverBtns];
-discoverCardsContainer.innerHTML = gameList.filter(game => game.category === 'new').map(game => htmlDiscoverCard(game)).join('')
-btns.forEach(btn => {
-    btn.addEventListener('click', ((e) => {
-        const renderDiscoverCards = games => {
-            const discoverSelectedGames = games.filter(game => game.category === btn.dataset.category);
-            discoverCardsContainer.innerHTML = discoverSelectedGames.map(game => htmlDiscoverCard(game)).join('')
-        }        
+const selectBtnsCategory = () => {
+    let btns = [...discoverBtns];
+    discoverCardsContainer.innerHTML = gameList.filter(game => game.category === 'new').map(game => htmlDiscoverCard(game)).join('')
+    heartBtn()
+    btns.forEach(btn => {
+        btn.addEventListener('click', ((e) => {
+            const renderDiscoverCards = games => {
+                const discoverSelectedGames = games.filter(game => game.category === btn.dataset.category);
+                discoverCardsContainer.innerHTML = discoverSelectedGames.map(game => htmlDiscoverCard(game)).join('')
+            }        
         btns.find(btn => btn.classList.contains('btn--active')).classList.remove('btn--active')
         if(!e.target.classList.contains('btn--active')){
             e.target.classList.add('btn--active')
             renderDiscoverCards(gameList)
+            heartBtn()
         }
     }))
 })
+}
 
 
 
@@ -131,8 +117,8 @@ function init(){
     // Sale Games
     renderSaleCards(gameList)
 
-    
-
+    // Discover Games
+    document.addEventListener('DOMContentLoaded', selectBtnsCategory)
 }
 
 init();

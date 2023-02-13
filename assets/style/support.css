@@ -1,0 +1,102 @@
+:root{
+    /* Colores */
+    --Background: #0f0e17;
+    --Navbar: #001845;
+    --Headline: #fffffe;
+    --Paragraph: #a7a9be;
+    --Highlight: #ff8906;
+    --Secondary: #f25f4c;
+    --Green: #2cb67d;
+    --Purple: #7f5af0;
+    --Pink: #e53170;
+    --Buttons: #ff8906;
+    --Footer: #242629;
+
+    /* Font Family */
+    --Font-Roboto: 'Roboto', sans-serif;
+    --Font-Montserrat: 'Montserrat', sans-serif;
+    --Font-Source-Sans-Pro: 'Source Sans Pro', sans-serif;
+    --Font-Ubuntu: 'Ubuntu', sans-serif;
+}
+
+#faq{
+    margin-top: 10px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: var(--Font-Roboto);
+    animation: fade 1s;
+}
+
+.faq__title{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 5rem;
+    text-shadow: 0 0 5px var(--Highlight);
+    letter-spacing: 20px;
+}
+
+.faq__title img{
+    width: 100px;
+}
+
+.faq__list{
+    padding: 16px;
+    min-width: 330px;
+    width: 330px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+@media (min-width: 600px) {
+    .faq__list{
+        width: 500px;
+    }
+}
+
+.item__title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.7rem;
+    cursor: pointer;
+    color: var(--Headline);
+    transition: color 0.2s;
+    text-shadow: 0 0 5px var(--Highlight);
+}
+
+.item__title--active{
+    color: var(--Highlight);
+    text-shadow: 0 0 5px var(--Highlight);
+}
+
+.item__title:hover{
+    color: var(--Highlight);
+    transition: all 0.4s;
+    text-shadow: 0 0 5px var(--Highlight);
+}
+
+.arrow{
+    transform: rotateX(0);
+    transition: all 0.4s;
+}
+
+.faq__list__item p{
+    margin-top: 6px;
+    font-size: 1.2rem;
+    color: var(--Paragraph);
+    animation: fade 0.4s;
+    line-height: 20px;
+}
+
+
+.arrow--active{
+    transform: rotateX(180deg);
+    transition: all 0.4s;
+}

@@ -82,6 +82,7 @@ body{
 
 .navbar--active{
     visibility: visible;
+    animation: slide-left 0.5s;
 }
 
 .navbar-list{
@@ -98,9 +99,29 @@ body{
 }
 
 .navbar-list__item a{
+    position: relative;
     color: var(--Headline);
     text-decoration: none;
+    font-weight: 900;
     font-family: var(--Font-Roboto);
+}
+
+.navbar-list__item a::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: var(--Highlight);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.4s;
+}
+.navbar-list__item a:hover::before{
+    content: "";
+    transform: scaleX(100%);
+    transform-origin: bottom left;
 }
 
 .navbar-list__user{
@@ -152,6 +173,7 @@ body{
 
 .cart-menu--active{
     visibility: visible;
+    animation: slide-right 0.5s;
 }
 
 .cart-menu-container{
@@ -214,6 +236,7 @@ body{
     background-color: var(--Buttons);
     color: var(--Headline);
     font-weight: 700;
+    cursor: pointer;
 }
 
 .product__handler span{
@@ -295,10 +318,13 @@ main{
     width: 80%;
     font-size: 1.2rem;
     color: var(--Paragraph);
+    animation: fade 0.5s;
 }
 
 .hero__titles h1{
     font-size: 2.2rem;
+    text-shadow: 0 0 20px var(--Headline);
+    animation: fade 0.5s;
 }
 
 .hero__titles span{
@@ -314,11 +340,13 @@ main{
     align-items: center;
     gap: 10px;
     color: var(--Headline);
+    animation: fade 0.5s;
 }
 
 .hero__carousel h3{
     font-size: 1.6rem;
     font-family: var(--Font-Roboto);
+    text-shadow: 0 0 10px var(--Secondary);
 }
 
 .hero__carousel__controls{
@@ -366,12 +394,15 @@ main{
 .sale h3{
     font-size: 1.6rem;
     font-family: var(--Font-Roboto);
+    text-shadow: 0 0 10px var(--Green);
+    animation: fade 0.5s;
 }
 
 .sale-container{
     display: grid;
     grid-template-columns: 1fr;
     width: 100%;
+    animation: fade 0.5s;
 }
 
 .sale__cards{
@@ -426,6 +457,10 @@ main{
     cursor: pointer;
 }
 
+.heart--active{
+    color: var(--Pink);
+}
+
 .btn{
     font-family: var(--Font-Roboto);
     padding: 8px;
@@ -435,6 +470,11 @@ main{
     color: var(--Headline);
     font-weight: 700;
     cursor: pointer;
+}
+
+.btn:hover{
+    box-shadow: 0 0 10px var(--Purple);
+    transition: all 0.5s;
 }
 
 /* Discover */
@@ -448,11 +488,13 @@ main{
     justify-content: center;
     align-items: center;
     gap: 10px;
+    animation: fade 0.5s;
 }
 
 .discover h3{
     font-size: 2rem;
     font-family: var(--Font-Roboto);
+    text-shadow: 0 0 10px var(--Pink);
 }
 
 .discover__btns{
@@ -489,6 +531,7 @@ main{
     align-items: center;
     border: 2px solid var(--Purple);
     border-radius: 10px;
+    animation: fade 0.5s;
 }
 
 .discover__card__img{
@@ -566,6 +609,9 @@ footer{
     font-weight: 500;
 }
 
+.contact__list__item a:hover{
+    color: var(--Headline);
+}
 /* Footer bottom */
 
 .footer-bottom{

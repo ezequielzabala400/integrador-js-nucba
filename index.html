@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="Games, store, sale, steam, epic games, origin, ubisoft, pc">
-    <meta name="description" content="">
+    <meta name="description" content="Te ofrecemos claves de juegos para pc en la plataforma que desees. Desde Steam, Epic games, Uplay y más...">
     <meta name="author" content="Hector Ezequiel Zabala">
     <meta name="robots" content="index, follow">
     <!-- Iconos -->
@@ -15,6 +15,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="./assets/style/style.css">
     <link rel="stylesheet" href="./assets/style/mediaqueries.css">
+    <link rel="stylesheet" href="./assets/style/animations.css">
     <!-- Titulo -->
     <title>Rooi Slang</title>
 </head>
@@ -25,19 +26,19 @@
         <nav class="navbar">
             <ul class="navbar-list" id="navbar-list">
                 <li class="navbar-list__item"><a href="#">Inicio</a></li>
-                <li class="navbar-list__item"><a href="#">Lista de deseados</a></li>
-                <li class="navbar-list__item"><a href="#">Sobre Nosotros</a></li>
-                <li class="navbar-list__item"><a href="#">Soporte</a></li>
+                <li class="navbar-list__item"><a href="./pages/wishlist.html">Lista de deseados</a></li>
+                <li class="navbar-list__item"><a href="./pages/about-us.html">Sobre Nosotros</a></li>
+                <li class="navbar-list__item"><a href="./pages/support.html">Soporte</a></li>
             </ul>
             <div class="navbar-list__user">
                 <i class="bi bi-person-circle user-img"></i>
                 <div class="navbar-list__sesion">
-                    <a href="#" class="navbar-list__login">Iniciar Sesión</a>
-                    <a href="#" class="navbar-list__register">Registrarme</a>
+                    <a href="./pages/login.html" class="navbar-list__login">Iniciar Sesión</a>
+                    <a href="./pages/register.html" class="navbar-list__register">Registrarme</a>
                 </div>
             </div>
         </nav>
-        <a href="#"><img src="./assets/img/Logo.png" class="logo" width="100" alt="Logo"></a>
+        <a href="#"><img src="./assets/img/Logo.png" class="logo" alt="Logo"></a>
         <i class="bi bi-cart" id="toggle-cart"></i>
         <div class="cart-menu">
             <div class="cart-menu-container">
@@ -49,9 +50,9 @@
                         </div>
                         <div class="product__item__btns">
                             <div class="product__handler">
-                                <button class="btn--up">-</button>
-                                <span>0</span>
-                                <button class="btn--down">+</button>
+                                <button class="btn--down">-</button>
+                                <span>1</span>
+                                <button class="btn--up">+</button>
                             </div>
                             <div class="product__options">
                                 <label for="">Seleccione su plataforma</label>
@@ -80,7 +81,7 @@
         <!-- Hero -->
         <section class="hero" id="hero">
             <div class="hero__titles">
-                <h1>¡Rooi Slang te da la bienvenida</h1>
+                <h1>Rooi Slang te da la bienvenida</h1>
                 <p>
                     Te ofrecemos claves de juegos para pc en la plataforma que desees. Desde <span>Steam</span>, <span>Epic games</span>, <span>Uplay</span> y más...
                 </p>
@@ -92,7 +93,7 @@
                 <h3>Recomendaciones</h3>
                 <div class="hero__carousel__controls">
                     <i class="bi bi-arrow-left" id="hero__carousel--arrow-left"></i>
-                    <img src="./assets/img/carousel-hero/carousel-img-1.jpg" class="hero__carousel__img" alt="">
+                    <img src="./assets/img/carousel-hero/carousel-img-1.jpg" class="hero__carousel__img" alt="Portada Imágenes">
                     <i class="bi bi-arrow-right" id="hero__carousel--arrow-right"></i>
                 </div>
             </div>
@@ -136,14 +137,15 @@
         <section class="footer-bottom">
             <ul class="footer-bottom__list">
                 <li class="footer-bottom__list__item"><a href="#">Inicio</a></li>
-                <li class="footer-bottom__list__item"><a href="#">Sobre Nosotros</a></li>
-                <li class="footer-bottom__list__item"><a href="#">Soporte</a></li>
+                <li class="footer-bottom__list__item"><a href="./pages/about-us.html">Sobre Nosotros</a></li>
+                <li class="footer-bottom__list__item"><a href="./pages/support.html">Soporte</a></li>
             </ul>
-            <p class="footer-bottom__copyright"><img src="./assets/img/footer-gif.webp" class="footer-gif" width="100" alt="footer-gif"> &copy;2023 Hector Ezequiel Zabala - Rooi Slang</p>
+            <p class="footer-bottom__copyright"><img src="./assets/img/footer-gif.webp" class="footer-gif" alt="footer-gif"> &copy;2023 Hector Ezequiel Zabala - Rooi Slang</p>
         </section>
     </footer>
     <!-- Js -->
     <script src="./assets/js/games.js"></script>
+    <script src="./assets/js/utils.js"></script>
     <script src="./assets/js/main.js"></script>
 </body>
 </html>

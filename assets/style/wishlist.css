@@ -1,0 +1,78 @@
+:root{
+    /* Colores */
+    --Background: #0f0e17;
+    --Navbar: #001845;
+    --Headline: #fffffe;
+    --Paragraph: #a7a9be;
+    --Highlight: #ff8906;
+    --Secondary: #f25f4c;
+    --Green: #2cb67d;
+    --Purple: #7f5af0;
+    --Pink: #e53170;
+    --Buttons: #ff8906;
+    --Footer: #242629;
+
+    /* Font Family */
+    --Font-Roboto: 'Roboto', sans-serif;
+    --Font-Montserrat: 'Montserrat', sans-serif;
+    --Font-Source-Sans-Pro: 'Source Sans Pro', sans-serif;
+    --Font-Ubuntu: 'Ubuntu', sans-serif;
+}
+
+#wishlist{
+    min-height: calc(100vh - 80px);
+}
+
+#wishlist h2{
+    margin-top: 30px;
+    text-align: center;
+    font-size: 2rem;
+    font-family: var(--Font-Roboto);
+    text-shadow: 0 0 10px var(--Highlight);
+    letter-spacing: 4px;
+    animation: fade 0.5s;
+}
+
+.wishlist-container{
+    margin: auto;
+    max-width: 500px;
+    margin-top: 20px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.wish-game{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border: 2px solid var(--Highlight);
+    border-radius: 10px;
+    animation: fade 0.5s;
+}
+
+.wish-game__title{
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    gap: 10px;
+    font-family: var(--Font-Roboto);
+    font-weight: 700;
+}
+
+.wish-game__btns{
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.wish-game__btns a{
+    text-decoration: none;
+    color: var(--Headline);
+}
