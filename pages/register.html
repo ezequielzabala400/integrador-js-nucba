@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="../assets/style/mediaqueries.css">
     <link rel="stylesheet" href="../assets/style/login-register.css">
     <link rel="stylesheet" href="../assets/style/animations.css">
+    <!-- Alertify -->
+    <!-- JavaScript -->
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <!-- Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+    
     <!-- Titulo -->
     <title>Registrarse</title>
 </head>
@@ -42,6 +50,7 @@
         <a href="../index.html"><img src="../assets/img/Logo.png" class="logo" alt="Logo"></a>
         <a href="../index.html"><i class="bi bi-cart" id="toggle-cart"></i></a>
     </header>
+    <div id="overlay"></div>
     <!-- Main -->
     <main>
         <section id="register">
@@ -78,7 +87,7 @@
     <footer>
         <!-- Contact -->
         <section class="contact">
-            <h3>Buscanos en nuestras redes</h3>
+            <h3>Búscanos en nuestras redes</h3>
             <ul class="contact__list">
                 <li class="contact__list__item"><a href="#">Facebook <i class="bi bi-facebook"></i></a></li>
                 <li class="contact__list__item"><a href="#">Twitter <i class="bi bi-twitter"></i></a></li>

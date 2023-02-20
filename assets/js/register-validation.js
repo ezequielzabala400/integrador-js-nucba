@@ -7,6 +7,7 @@ const passwordInput = document.getElementById('password-input');
 const repeatPasswordInput = document.getElementById('repeat-password-input');
 const toggleMenu = document.getElementById('toggle-menu');
 const navbar = document.querySelector('.navbar');
+const overlay = document.getElementById('overlay')
 
 const EMAIL_REGEX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
 
@@ -121,7 +122,14 @@ const debounce = (funcion, delay = 500) => {
 const init = () =>{
     toggleMenu.addEventListener('click', (() => {
         navbar.classList.toggle('navbar--active')
+        overlay.classList.toggle('overlay')
     }))
+    overlay.addEventListener('click', ((e) => {
+        if(!e.target.classList.contains('overlay')) return;
+        overlay.classList.remove('overlay')
+        navbar.classList.remove('navbar--active')
+    }))
+    console.log(window.location)
     form.addEventListener('submit', ((e) => {
         e.preventDefault();
         checkUser();
@@ -130,8 +138,10 @@ const init = () =>{
         checkRepeatPassword();
         const isFormValid = checkEmail() && checkPassword() && checkRepeatPassword() && checkUser();
         if(isFormValid){
-            alert('La cuenta se creo con éxito!')
-            form.submit()
+            alertify.alert().set('message', 'La cuenta se creo con éxito!').show();
+            setTimeout(() => {
+                window.location.replace('../index.html')
+            }, 2000)
         }
     }))
     form.addEventListener('input', debounce((e) => {

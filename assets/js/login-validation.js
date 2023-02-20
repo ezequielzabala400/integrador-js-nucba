@@ -7,6 +7,7 @@ const passwordInput = document.getElementById('password-input');
 const repeatPasswordInput = document.getElementById('repeat-password-input');
 const toggleMenu = document.getElementById('toggle-menu');
 const navbar = document.querySelector('.navbar');
+const overlay = document.getElementById('overlay')
 
 
 // funciones para validar
@@ -106,7 +107,14 @@ const debounce = (funcion, delay = 500) => {
 const init = () =>{
     toggleMenu.addEventListener('click', (() => {
         navbar.classList.toggle('navbar--active')
+        overlay.classList.toggle('overlay')
     }))
+    overlay.addEventListener('click', ((e) => {
+        if(!e.target.classList.contains('overlay')) return;
+        overlay.classList.remove('overlay')
+        navbar.classList.remove('navbar--active')
+    }))
+    
     
     form.addEventListener('submit', ((e) => {
         e.preventDefault();
@@ -116,8 +124,10 @@ const init = () =>{
         checkRepeatPassword();
         const isFormValid = checkUser() && checkPassword() && checkEmail() && checkRepeatPassword();
         if(isFormValid){
-            alert('Se inició sesión con éxito!')
-            form.submit()
+            alertify.alert().set('message', 'Se inició sesión con éxito!').show();
+            setTimeout(() => {
+                window.location.replace('../index.html')
+            }, 2000)
         }
     }))
     form.addEventListener('input', debounce((e) => {

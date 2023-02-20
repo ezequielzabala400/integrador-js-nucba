@@ -16,6 +16,15 @@
     <link rel="stylesheet" href="./assets/style/style.css">
     <link rel="stylesheet" href="./assets/style/mediaqueries.css">
     <link rel="stylesheet" href="./assets/style/animations.css">
+
+    <!-- Alertify -->
+    <!-- JavaScript -->
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <!-- Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+    
     <!-- Titulo -->
     <title>Rooi Slang</title>
 </head>
@@ -42,40 +51,20 @@
         <i class="bi bi-cart" id="toggle-cart"></i>
         <div class="cart-menu">
             <div class="cart-menu-container">
+                <p class="empty-cart-text show">El carrito esta vacío...</p>
                 <div class="cart-menu__products">
-                    <div class="cart-menu__products__item">
-                        <div class="product__item__info">
-                            <img src="./assets/img/carousel-hero/carousel-img-1.jpg" alt="" class="product__item__img">
-                            <p class="product__item__title">Dead Space</p>
-                        </div>
-                        <div class="product__item__btns">
-                            <div class="product__handler">
-                                <button class="btn--down">-</button>
-                                <span>1</span>
-                                <button class="btn--up">+</button>
-                            </div>
-                            <div class="product__options">
-                                <label for="">Seleccione su plataforma</label>
-                                <select name="" id="">
-                                    <option value="">Steam</option>
-                                    <option value="">Epic</option>
-                                    <option value="">Ubisoft</option>
-                                    <option value="">Origin</option>
-                                    <option value="">GOG</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
                 <div class="divider"></div>
                 <div class="cart-menu__btns">
-                    <p>Total: <span>0</span></p>
-                    <button class="btn">Comprar</button>
-                    <button class="btn">Vaciar Carrito</button>
+                    <p>Total: <span id="total">0</span></p>
+                    <button class="btn" id="buyCart">Comprar</button>
+                    <button class="btn" id="deleteAll">Vaciar Carrito</button>
                 </div>
             </div>
         </div>
     </header>
+        <div id="overlay"></div>
     <!-- Main -->
     <main>
         <!-- Hero -->
@@ -93,7 +82,7 @@
                 <h3>Recomendaciones</h3>
                 <div class="hero__carousel__controls">
                     <i class="bi bi-arrow-left" id="hero__carousel--arrow-left"></i>
-                    <img src="./assets/img/carousel-hero/carousel-img-1.jpg" class="hero__carousel__img" alt="Portada Imágenes">
+                    <img src="" class="hero__carousel__img" alt="Portada Imágenes">
                     <i class="bi bi-arrow-right" id="hero__carousel--arrow-right"></i>
                 </div>
             </div>
@@ -125,7 +114,7 @@
     <footer>
         <!-- Contact -->
         <section class="contact">
-            <h3>Buscanos en nuestras redes</h3>
+            <h3>Búscanos en nuestras redes</h3>
             <ul class="contact__list">
                 <li class="contact__list__item"><a href="#">Facebook <i class="bi bi-facebook"></i></a></li>
                 <li class="contact__list__item"><a href="#">Twitter <i class="bi bi-twitter"></i></a></li>

@@ -25,6 +25,31 @@
     --Font-Source-Sans-Pro: 'Source Sans Pro', sans-serif;
     --Font-Ubuntu: 'Ubuntu', sans-serif;
 }
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #001845 #0f0e17;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #0f0e17;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #001845;
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb:hover{
+    background-color: var(--Highlight);
+  }
 
 /* Clases Generales */
 *{
@@ -33,6 +58,7 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
+
 
 html{
     font-size: 10px;
@@ -142,11 +168,13 @@ body{
 
 .navbar-list__login{
     color: var(--Headline);
+    font-weight: 700;
     text-decoration: none;
 }
 
 .navbar-list__register{
     text-decoration: none;
+    font-weight: 700;
     color: var(--Highlight);
 }
 
@@ -186,15 +214,32 @@ body{
     width: 100%;
 }
 
+.empty-cart-text{
+    margin-top: 50px;
+    color: var(--Headline);
+    font-size: 2rem;
+    font-family: var(--Font-Roboto);
+    font-weight: 700;
+    display: none;
+}
+
+.show{
+    display: flex;
+}
+
 .cart-menu__products{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     height: 80%;
+    gap: 10px;
+    overflow-y: auto;
 }
 
 .cart-menu__products__item{
+    position: relative;
+    width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -208,12 +253,24 @@ body{
     background-color: #0f0e17;
 }
 
+.delete{
+    padding: 2px 8px 0 0;
+    position: absolute;
+    right: 0;
+    font-size: 16px;
+    cursor: pointer;
+}
+
 .product__item__img{
     width: 100%;
 }
 
 .product__item__title{
     font-weight: 900;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .product__item__btns{
@@ -328,7 +385,7 @@ main{
 }
 
 .hero__titles span{
-    color: var(--Headline);
+    color: var(--Highlight);
 }
 
 .hero__carousel{
@@ -356,7 +413,8 @@ main{
 .hero__carousel__img{
     height: 100%;
     width: 100%;
-    border: 1px solid var(--Headline);
+    border: 2px solid var(--Highlight);
+    border-radius: 20px;
 }
 
 #hero__carousel--arrow-left{
@@ -367,17 +425,20 @@ main{
     background-color: var(--Buttons);
     color: var(--Headline);
     cursor: pointer;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 #hero__carousel--arrow-right{
     position: absolute;
     right: 0;
     top: 50px;
-
     font-size: 4rem;
     background-color: var(--Buttons);
     color: var(--Headline);
     cursor: pointer;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 /* Sale */
@@ -470,6 +531,7 @@ main{
     color: var(--Headline);
     font-weight: 700;
     cursor: pointer;
+    user-select: none;
 }
 
 .btn:hover{
@@ -650,3 +712,21 @@ footer{
     height: 60px;
     width: 60px;
 }
+
+.ajs-content{
+    font-size: 1.4rem;
+}
+
+.overlay {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 1; /*Para que quede por encima del resto de las cosas*/
+  
+    /*Efecto de Glassmorphismo*/
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+  }
