@@ -1,6 +1,12 @@
 
 @media (min-width: 576px) {
 
+    /* Cart */
+
+    .empty-cart-text{
+        font-size: 1.4rem;
+    }
+
     /* Hero */
 
     .hero__titles h1{
@@ -46,6 +52,11 @@
 @media (min-width: 768px) {
 
     /* Cart */
+
+
+    .empty-cart-text{
+        font-size: 2rem;
+    }
 
     .cart-menu__products__item{
         flex-direction: row;

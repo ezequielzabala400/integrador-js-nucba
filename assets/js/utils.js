@@ -14,7 +14,7 @@ const htmlSaleCard = ({name, price, img, oldPrice}) => {
                     <div class="sale-card__content">
                         <div class="sale-card__prices">
                             <p>${oldPrice}$</p>
-                            <p>${price.toFixed(2)}</p>
+                            <p>${price.toFixed(2) + '$'}</p>
                         </div>
                         <div class="sale-card__btns">
                             <i class="bi bi-heart-fill heart" data-id="${name}"></i>
@@ -42,7 +42,7 @@ const htmlDiscoverCard = ({name, price, img, category}) => {
                     <img src="${img}" class="discover__card__img" title="${name}" alt="${name}">
                     <div class="discover__card__middle">
                         <i class="bi bi-heart-fill heart" data-id="${name}"></i>
-                        <p>${price.toFixed(2)}</p>
+                        <p>${price.toFixed(2) + '$'}</p>
                     </div>
                     <div class="discover__card__bottom">
                         <p class="discover__card--${category}">${discoverCaterogryIcon(category)}</p>
@@ -61,5 +61,5 @@ const hiddeOverlay = (e) => {
 }
 
 
-const formatPrice = price => price.toFixed(2)
+const formatPrice = price => price.toFixed(2) + '$'
 
