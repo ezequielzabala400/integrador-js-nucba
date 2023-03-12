@@ -2,6 +2,7 @@ const toggleMenu = document.getElementById('toggle-menu');
 const navbar = document.querySelector('.navbar')
 const toggleCart = document.getElementById('toggle-cart');
 const cartMenu = document.querySelector('.cart-menu');
+const bubbleCart = document.querySelector('.cart-bubble');
 const overlay = document.getElementById('overlay');
 
 const carouselArrowLeft = document.getElementById('hero__carousel--arrow-left');
@@ -32,13 +33,22 @@ const saveValueToLocalStorage = value =>{
     localStorage.setItem('total', JSON.stringify(value))
 }
 
+const showBubbleNumber = productsList => {
+    if(productsList.length < 1){
+        bubbleCart.setAttribute('hidden', 'true');
+    }else{
+        bubbleCart.removeAttribute('hidden');
+        bubbleCart.textContent = productsList.length;
+    }
+}
+
 const productCartHTML = (product) => {
     return `
     <div class="cart-menu__products__item">
                         <div class="product__item__info">
                             <i class="bi bi-trash delete" data-id="${product.name}"></i>
                             <img src="${product.img}" alt="${product.name}" title="${product.name}" class="product__item__img">
-                            <p class="product__item__title">${product.name}</p>
+                            <p class="product__item__title" title="${product.name}">${product.name}</p>
                         </div>
                         <div class="product__item__btns">
                             
@@ -68,15 +78,16 @@ const addGameToCart = (gameList, btn) => {
     const gameFinded = gameList.find(game => game.name === btn.dataset.name)
     if(productsList.some(product => product.name === gameFinded.name)){
         alertify.alert('El juego ya esta en el carrito').set('closable', false)
-        return
+        return;
     }
-    price += gameFinded.price
-    totalPrice.innerHTML = formatPrice(price)
-    productsList.push(gameFinded)
-    renderProducts(productsList)
-    saveProductsToLocalStorage(productsList)
-    saveValueToLocalStorage(price)
-    showEmptyText(productsList)
+    price += gameFinded.price;
+    totalPrice.innerHTML = formatPrice(price);
+    productsList.push(gameFinded);
+    renderProducts(productsList);
+    saveProductsToLocalStorage(productsList);
+    saveValueToLocalStorage(price);
+    showEmptyText(productsList);
+    showBubbleNumber(productsList);
 }
 
 const deleteProduct = (e) =>{
@@ -88,8 +99,9 @@ const deleteProduct = (e) =>{
     productsList = productsList.filter(product => product !== productDelete)
     renderProducts(productsList)
     saveProductsToLocalStorage(productsList)
-    saveValueToLocalStorage(price)
-    showEmptyText(productsList)
+    saveValueToLocalStorage(price);
+    showEmptyText(productsList);
+    showBubbleNumber(productsList);
     });
     
 }
@@ -98,12 +110,13 @@ const deleteProduct = (e) =>{
 const deleteAllProducts = () => {
     alertify.confirm('¿Vaciar todo el carrito?').set('onok', (() => {
         productsList = [];
-        renderProducts(productsList)
-        price = 0
-        totalPrice.innerHTML = formatPrice(price)
-        saveProductsToLocalStorage(productsList)
-        saveValueToLocalStorage(price)
-        showEmptyText(productsList)
+        renderProducts(productsList);
+        price = 0;
+        totalPrice.innerHTML = formatPrice(price);
+        saveProductsToLocalStorage(productsList);
+        saveValueToLocalStorage(price);
+        showEmptyText(productsList);
+        showBubbleNumber(productsList);
     }) );
 }
 
@@ -121,19 +134,39 @@ let heroCarouselImg = [
 const carouselSlider = () => {
     let i = 0;
     heroCarousel.setAttribute('src',heroCarouselImg[i])
-    carouselArrowRight.addEventListener('click', (() => {
+    setInterval(() => {
+        heroCarousel.classList.add('hero__carousel__img--fade')
+        i++;
+        if(i > 4){
+            i = 0;
+        }
+        heroCarousel.setAttribute('src',heroCarouselImg[i])
+        setTimeout(() => {
+            heroCarousel.classList.remove('hero__carousel__img--fade')
+        }, 500)
+    }, 2000)
+    carouselArrowRight.addEventListener('click', ((e) => {
+        e.stopImmediatePropagation();
+        heroCarousel.classList.add('hero__carousel__img--fade')
         i++
         if(i > 4){
             i = 0;
         }
         heroCarousel.setAttribute('src',heroCarouselImg[i])
+        setTimeout(() => {
+            heroCarousel.classList.remove('hero__carousel__img--fade')
+        }, 500)
     }))
     carouselArrowLeft.addEventListener('click', (() => {
+        heroCarousel.classList.add('hero__carousel__img--fade')
         i--
         if(i < 0){
             i = 4;
         }
         heroCarousel.setAttribute('src',heroCarouselImg[i])
+        setTimeout(() => {
+            heroCarousel.classList.remove('hero__carousel__img--fade')
+        }, 500)
     }))
 }
 
@@ -212,6 +245,7 @@ const showEmptyText = productsList => {
 }
 
 
+
 function init(){
     // Menu Hamburguesa
     toggleMenu.addEventListener('click', () => {
@@ -235,6 +269,8 @@ function init(){
         
     }))
 
+    showBubbleNumber(productsList)
+
     overlay.addEventListener('click', hiddeOverlay)
 
     buyCartBtn.addEventListener('click', (() => {
@@ -250,6 +286,7 @@ function init(){
             saveProductsToLocalStorage(productsList)
             renderProducts(productsList)
             showEmptyText(productsList)
+            showBubbleNumber(productsList)
             setTimeout(() => {
                 alertify.alert().set('message', 'Gracias por la compra :D').show(); 
             }, 100)
