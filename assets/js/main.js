@@ -124,11 +124,11 @@ const deleteAllProducts = () => {
 // Hero Carousel
 
 let heroCarouselImg = [
-    '../assets/img/carousel-hero/carousel-img-1.jpg',
-    '../assets/img/carousel-hero/carousel-img-2.jpg',
-    '../assets/img/carousel-hero/carousel-img-3.jpg',
-    '../assets/img/carousel-hero/carousel-img-4.jpg',
-    '../assets/img/carousel-hero/carousel-img-5.jpg'
+    './assets/img/carousel-hero/carousel-img-1.jpg',
+    './assets/img/carousel-hero/carousel-img-2.jpg',
+    './assets/img/carousel-hero/carousel-img-3.jpg',
+    './assets/img/carousel-hero/carousel-img-4.jpg',
+    './assets/img/carousel-hero/carousel-img-5.jpg'
 ]
 
 const carouselSlider = () => {
